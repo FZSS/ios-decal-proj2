@@ -37,23 +37,34 @@
                                 <state key="normal" title="Guess"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I1-Vt-qcj">
-                                <rect key="frame" x="516" y="28" width="71" height="30"/>
+                                <rect key="frame" x="499" y="28" width="88" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Start Over"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFB-4S-glu">
-                                <rect key="frame" x="20" y="28" width="69" height="30"/>
-                                <state key="normal" title="Tries Left:"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tries Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqN-fc-DeG">
+                                <rect key="frame" x="20" y="33" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You have Guessed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-Vk-4nN">
+                                <rect key="frame" x="175" y="500" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NFB-4S-glu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="4Nq-Ap-Fdq"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="NFB-4S-glu" secondAttribute="leading" id="DxW-Bf-R7c"/>
+                            <constraint firstItem="nqN-fc-DeG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="3fR-PH-40v"/>
+                            <constraint firstItem="f0l-Vk-4nN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9dy-0c-HvG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8I1-Vt-qcj" secondAttribute="trailing" id="EeG-oz-ql3"/>
                             <constraint firstItem="gtB-Zn-oPo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUd-gE-3ta"/>
                             <constraint firstItem="8I1-Vt-qcj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="U81-7c-Mb5"/>
                             <constraint firstItem="gtB-Zn-oPo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jrA-jT-ANq"/>
+                            <constraint firstItem="f0l-Vk-4nN" firstAttribute="top" secondItem="KeC-UT-VeO" secondAttribute="bottom" constant="42" id="kYO-GJ-yTe"/>
                             <constraint firstItem="Wvd-WV-8iS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nFb-0f-WdS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nqN-fc-DeG" secondAttribute="leading" id="nLX-bT-Qol"/>
                             <constraint firstItem="Wvd-WV-8iS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="reu-1O-nVt"/>
                             <constraint firstItem="eE3-Tc-lJb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sAB-ZC-DEy"/>
                             <constraint firstItem="KeC-UT-VeO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="znX-h7-avi"/>
@@ -65,16 +76,18 @@
                         <outlet property="HangmanImage" destination="Wvd-WV-8iS" id="LYh-0J-hx7"/>
                         <outlet property="InputTextField" destination="eE3-Tc-lJb" id="Vaq-ui-BvZ"/>
                         <outlet property="StartOverButton" destination="8I1-Vt-qcj" id="A5d-Wh-O2C"/>
+                        <outlet property="TriesLeftLabel" destination="nqN-fc-DeG" id="eW1-Xo-VLH"/>
+                        <outlet property="guessedLetterLabel" destination="f0l-Vk-4nN" id="RcR-V4-Vce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="390" y="387"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Screen View Controller-->
         <scene sceneID="8rH-pj-ZaU">
             <objects>
-                <viewController id="zv5-km-XeB" sceneMemberID="viewController">
+                <viewController id="zv5-km-XeB" customClass="StartScreenViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cbg-Ip-Ulw"/>
                         <viewControllerLayoutGuide type="bottom" id="n45-ko-NsU"/>
@@ -94,7 +107,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="aYb-io-ojM"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startGame" id="aYb-io-ojM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Max Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9b-4h-5P4">
@@ -103,8 +116,8 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Default 5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-oY-Mca">
-                                <rect key="frame" x="331" y="242" width="109" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Default 5, Max 20" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-oY-Mca">
+                                <rect key="frame" x="331" y="242" width="136" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -117,6 +130,9 @@
                             <constraint firstItem="F9b-4h-5P4" firstAttribute="leading" secondItem="Vdj-g1-DdG" secondAttribute="leading" id="i0y-IF-x3k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guessInput" destination="M6X-oY-Mca" id="uvA-zl-sYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YzL-ff-SHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

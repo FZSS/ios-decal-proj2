@@ -15,10 +15,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var GuessButton: UIButton!
     @IBOutlet weak var HangmanImage: UIImageView!
     @IBOutlet weak var StartOverButton: UIButton!
+    @IBOutlet weak var TriesLeftLabel: UILabel!
+    @IBOutlet weak var guessedLetterLabel: UILabel!
     
     var secretWord : String = ""
     var wordLength :  Int!
     var maxTryNum : Int = 5
+    var triesLeft : Int!
 
     var incorrectTryNum : Int!
     var guessedLetters : [Character]!
@@ -31,11 +34,13 @@ class GameViewController: UIViewController {
         guessedLetters = []
         secretWordCharArray = []
         displayStringArray  = []
-
-        // Do any additional setup after loading the view.
+        TriesLeftLabel.text = "Tries Left: " + "\(maxTryNum - incorrectTryNum)"
+        guessedLetterLabel.text = "You Have guessed :"
+        
         let hangmanPhrases = HangmanPhrases()
         secretWord = hangmanPhrases.getRandomPhrase()
         print(secretWord)
+        print(maxTryNum)
         wordLength = secretWord.characters.count
         var dashes = ""
         for i in 0..<wordLength {
@@ -60,6 +65,9 @@ class GameViewController: UIViewController {
 
         let guessInput : String = (InputTextField.text?.uppercaseString)!
         if validInput(guessInput) {
+            
+            TriesLeftLabel.text = "Tries Left: " + "\(maxTryNum - incorrectTryNum)"
+            
             let guess : Character = guessInput.characters.first!
             if guessedBefore(guess) {
                 let alertController = UIAlertController(title: "You guessed this letter before!", message: "Try anonther one!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -67,6 +75,7 @@ class GameViewController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
                 guessedLetters.append(guess)
+                displayGuessedLetters()
                 if secretWord.characters.contains(guess) {
                     revealCharacters(guess)
                 } else {
@@ -77,11 +86,21 @@ class GameViewController: UIViewController {
         }
     }
     
+    func displayGuessedLetters() {
+        var letters = ""
+        for i in 0..<guessedLetters.count {
+            letters = letters + "\(guessedLetters[i]) "
+        }
+        guessedLetterLabel.text = "You have guessed: " + letters
+    }
+
+    
     func drawHangman() {
         if incorrectTryNum > maxTryNum {
             let alertController = UIAlertController(title: "You lost!", message: "Incorrect tries exceeded max!", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
+            startOver()
         }
     }
     

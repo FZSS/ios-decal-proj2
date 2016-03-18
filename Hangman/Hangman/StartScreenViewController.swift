@@ -10,6 +10,8 @@ import UIKit
 
 class StartScreenViewController: UIViewController {
 
+    @IBOutlet weak var guessInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +23,15 @@ class StartScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "startGame" {
+            let viewController = segue.destinationViewController as! GameViewController
+            let tries = Int(guessInput.text!)!
+            //once i learned to handle erros I will handle them
+
+        viewController.maxTryNum = tries
+        }
     }
-    */
 
 }
