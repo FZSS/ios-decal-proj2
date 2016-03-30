@@ -28,7 +28,7 @@ class StartScreenViewController: UIViewController {
         if segue.identifier == "startGame" {
             let viewController = segue.destinationViewController as! GameViewController
             let tries = Int(guessInput.text!)!
-            //once i learned to handle erros I will handle them
+            //once i learned to handle erros I will handle them, but right now it would break if you put anything else than integers
 
         viewController.maxTryNum = tries
         }

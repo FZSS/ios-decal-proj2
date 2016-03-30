@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zv5-km-XeB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zv5-km-XeB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -18,22 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guess here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eE3-Tc-lJb">
-                                <rect key="frame" x="251" y="355" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guess here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eE3-Tc-lJb">
+                                <rect key="frame" x="251" y="285" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-WV-8iS">
-                                <rect key="frame" x="180" y="156" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-WV-8iS">
+                                <rect key="frame" x="224" y="98" width="150" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="--------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtB-Zn-oPo">
-                                <rect key="frame" x="229" y="78" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-UT-VeO">
-                                <rect key="frame" x="278" y="436" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-UT-VeO">
+                                <rect key="frame" x="278" y="335" width="43" height="30"/>
                                 <state key="normal" title="Guess"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I1-Vt-qcj">
@@ -42,16 +36,22 @@
                                 <state key="normal" title="Start Over"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tries Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqN-fc-DeG">
-                                <rect key="frame" x="20" y="33" width="77" height="21"/>
+                                <rect key="frame" x="20" y="33" width="76.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You have Guessed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-Vk-4nN">
-                                <rect key="frame" x="175" y="500" width="146" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have Guessed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-Vk-4nN">
+                                <rect key="frame" x="175" y="397" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="--------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtB-Zn-oPo">
+                                <rect key="frame" x="241" y="53" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -59,21 +59,25 @@
                             <constraint firstItem="nqN-fc-DeG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="3fR-PH-40v"/>
                             <constraint firstItem="f0l-Vk-4nN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9dy-0c-HvG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8I1-Vt-qcj" secondAttribute="trailing" id="EeG-oz-ql3"/>
+                            <constraint firstItem="f0l-Vk-4nN" firstAttribute="top" secondItem="Wvd-WV-8iS" secondAttribute="bottom" constant="100" id="RTq-0A-9w4"/>
                             <constraint firstItem="gtB-Zn-oPo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUd-gE-3ta"/>
                             <constraint firstItem="8I1-Vt-qcj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="U81-7c-Mb5"/>
+                            <constraint firstItem="gtB-Zn-oPo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="bxI-lY-O1y"/>
                             <constraint firstItem="gtB-Zn-oPo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jrA-jT-ANq"/>
-                            <constraint firstItem="f0l-Vk-4nN" firstAttribute="top" secondItem="KeC-UT-VeO" secondAttribute="bottom" constant="42" id="kYO-GJ-yTe"/>
+                            <constraint firstItem="eE3-Tc-lJb" firstAttribute="top" secondItem="Wvd-WV-8iS" secondAttribute="bottom" constant="20" id="n13-9P-kec"/>
                             <constraint firstItem="Wvd-WV-8iS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nFb-0f-WdS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nqN-fc-DeG" secondAttribute="leading" id="nLX-bT-Qol"/>
                             <constraint firstItem="Wvd-WV-8iS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="reu-1O-nVt"/>
                             <constraint firstItem="eE3-Tc-lJb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sAB-ZC-DEy"/>
+                            <constraint firstItem="Wvd-WV-8iS" firstAttribute="top" secondItem="gtB-Zn-oPo" secondAttribute="bottom" constant="10" id="xJR-ai-1oE"/>
+                            <constraint firstItem="KeC-UT-VeO" firstAttribute="top" secondItem="eE3-Tc-lJb" secondAttribute="bottom" constant="10" id="y6X-Wb-Fb0"/>
                             <constraint firstItem="KeC-UT-VeO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="znX-h7-avi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="GuessButton" destination="KeC-UT-VeO" id="GOP-YZ-bGN"/>
                         <outlet property="GuessTextUI" destination="gtB-Zn-oPo" id="MvD-fc-cYJ"/>
-                        <outlet property="HangmanImage" destination="Wvd-WV-8iS" id="LYh-0J-hx7"/>
+                        <outlet property="HangmanImage" destination="Wvd-WV-8iS" id="VPA-r0-gLX"/>
                         <outlet property="InputTextField" destination="eE3-Tc-lJb" id="Vaq-ui-BvZ"/>
                         <outlet property="StartOverButton" destination="8I1-Vt-qcj" id="A5d-Wh-O2C"/>
                         <outlet property="TriesLeftLabel" destination="nqN-fc-DeG" id="eW1-Xo-VLH"/>
@@ -139,5 +143,8 @@
             <point key="canvasLocation" x="-488" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1.gif" width="100" height="100"/>
+    </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
