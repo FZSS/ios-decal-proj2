@@ -117,7 +117,6 @@ class GameViewController: UIViewController {
 
             alertController.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: newGameActionHandler))
             self.presentViewController(alertController, animated: true, completion: nil)
-            startOver()
         }
         
         if imageCount < 7 { imageCount = imageCount + 1}
